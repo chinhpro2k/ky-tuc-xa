@@ -65,24 +65,28 @@ const ThongKeHoaDonPage = () => {
     {
       title: "Phí gửi xe",
       width: 120,
+      align:'right',
       dataIndex: "guiXe",
       render: (val, rec) => `${inputFormat(val)} VNĐ`,
     },
     {
       title: "Phí vé xe",
       width: 120,
+      align:'right',
       dataIndex: "veXe",
       render: (val, rec) => `${inputFormat(val)} VNĐ`,
     },
     {
       title: "Phí thuê phòng",
       width: 120,
+      align:'right',
       dataIndex: "thuePhong",
       render: (val, rec) => `${inputFormat(val)} VNĐ`,
     },
     {
       title: "Phí dịch vụ",
       width: 120,
+      align:'right',
       dataIndex: "dichVu",
       render: (val, rec) => `${inputFormat(val)} VNĐ`,
     },

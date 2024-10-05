@@ -108,7 +108,7 @@ const ThongKeSuDungDichVuPage = () => {
     {
       title: "Doanh thu",
       width: 120,
-      align: "center",
+      align:'right',
       render: (val, rec) => `${inputFormat(rec?.tongDoanhThu)} VNĐ`,
     },
   ];
