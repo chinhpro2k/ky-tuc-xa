@@ -1,13 +1,12 @@
 import rules from "@/utils/rules";
 import { resetFieldsForm } from "@/utils/utils";
-import { Button, Card, Col, Form, InputNumber, Row, Select } from "antd";
+import { Button, Card, Col, Form, Row, Select } from "antd";
 import moment from "moment";
 import { useEffect } from "react";
 import { useModel } from "umi";
 import { HoSoSinhVien } from "@/services/QuanLyHoSoSinhVien/typing";
 import SelectPhongKTX from "@/pages/DanhMuc/PhongKTX/components/Select";
 import SelectSinhVien from "@/pages/QuanLyHoSoSinhVien/components/Select";
-import MyDatePicker from "@/components/MyDatePicker";
 
 const FormThemMoi = (props: { title: string; getData?: () => void }) => {
   const { title, getData } = props;

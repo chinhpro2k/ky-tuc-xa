@@ -1,6 +1,6 @@
 import rules from "@/utils/rules";
 import { resetFieldsForm } from "@/utils/utils";
-import {Button, Card, Col, Form, InputNumber, Row, Select} from "antd";
+import {Button, Card, Col, Form, Row, Select} from "antd";
 import moment from "moment";
 import { useEffect } from "react";
 import { useModel } from "umi";

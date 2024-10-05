@@ -1,10 +1,7 @@
-import { InfoCircleOutlined } from "@ant-design/icons";
-import { Tooltip } from "antd";
+
 import React, { useEffect } from "react";
-import { history, useModel } from "umi";
+import {  useModel } from "umi";
 import AvatarDropdown from "./AvatarDropdown";
-import ModuleSwitch from "./ModuleSwitch";
-import NoticeIconView from "./NoticeIcon";
 import styles from "./index.less";
 import { getUserInfo } from "@/services/base/api";
 
@@ -12,8 +9,7 @@ export type SiderTheme = "light" | "dark";
 
 const GlobalHeaderRight: React.FC = () => {
   const { initialState, setInitialState } = useModel("@@initialState");
-  console.log("concas");
-  console.log("zinitialState.currentUser", initialState.currentUser);
+
 
   const getInfo = async () => {
     try {

@@ -7,7 +7,6 @@ import DonutChart from "@/components/Chart/DonutChart";
 import {getFilenameHeader, inputFormat} from "@/utils/utils";
 import TableStaticData from "@/components/Table/TableStaticData";
 import { IColumn } from "@/components/Table/typing";
-import { QuanLyThongTinVaDichVu } from "@/services/QuanLyThongTinVaDichVu/typing";
 import ButtonExtend from "@/components/Table/ButtonExtend";
 import {DownloadOutlined} from "@ant-design/icons";
 import formWaiting from "@/components/Loading/FormWaiting";
