@@ -19,7 +19,7 @@ const ThongKeVaoRaKTXPage = () => {
     try {
       const res = await thongKeVaoRaKTX(startDate, endDate);
       if (res) {
-        setDataThongKe(res?.data?.data);
+        setDataThongKe(res?.data?.data??[]);
       }
     } catch (e) {
       console.log(e);
@@ -91,7 +91,7 @@ const ThongKeVaoRaKTXPage = () => {
         {/*  colors={ColorBase}*/}
         {/*  showTotal*/}
         {/*/>*/}
-        <TableStaticData addStt data={dataThongKe} columns={columns}/>
+        <TableStaticData addStt data={dataThongKe??[]} columns={columns}/>
       </Card>
     </>
   );

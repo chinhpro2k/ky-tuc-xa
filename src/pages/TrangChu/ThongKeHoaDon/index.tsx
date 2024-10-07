@@ -30,7 +30,7 @@ const ThongKeHoaDonPage = () => {
     try {
       const res = await thongKeHoaDon(currentThang, currentNam);
       if (res) {
-        setDataThongKe(res?.data?.data);
+        setDataThongKe(res?.data?.data??[]);
       }
     } catch (e) {
       console.log(e);
@@ -159,7 +159,7 @@ const ThongKeHoaDonPage = () => {
             />
           </Col>
           <Col span={16}>
-            <TableStaticData addStt data={dataThongKe} columns={columns} />
+            <TableStaticData addStt data={dataThongKe??[]} columns={columns} />
           </Col>
         </Row>
       </Card>

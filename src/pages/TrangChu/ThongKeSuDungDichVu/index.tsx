@@ -40,7 +40,7 @@ const ThongKeSuDungDichVuPage = () => {
     try {
       const res = await thongKeSuDungDichVu(startDate, endDate);
       if (res) {
-        setDataThongKe(res?.data?.data);
+        setDataThongKe(res?.data?.data??[]);
       }
     } catch (e) {
       console.log(e);
@@ -134,7 +134,7 @@ const ThongKeSuDungDichVuPage = () => {
                 setEndDate(moment(val?.[1]).toISOString());
               }}
             />
-            <TableStaticData addStt data={dataThongKe} columns={columns} />
+            <TableStaticData addStt data={dataThongKe??[]} columns={columns} />
           </Col>
           <Col span={12}>
             <MyDatePicker
@@ -147,7 +147,7 @@ const ThongKeSuDungDichVuPage = () => {
                 setCurrentNam(year);
               }}
             />
-            <TableStaticData addStt data={dataThongKe2} columns={columns2} />
+            <TableStaticData addStt data={dataThongKe2??[]} columns={columns2} />
           </Col>
         </Row>
       </Card>
