@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { useModel } from "umi";
 import SelectPhongKTX from "@/pages/DanhMuc/PhongKTX/components/Select";
 import SelectSinhVien from "@/pages/QuanLyHoSoSinhVien/components/Select";
+import SelectPhongDangKy from "@/pages/QuanLyDangKyPhongKTX/Select";
+import {DangKyPhongKTX} from "@/services/DangKyPhongKTX/typing";
 
 const FormChucVu = (props: any) => {
   const [form] = Form.useForm();
@@ -39,20 +41,21 @@ const FormChucVu = (props: any) => {
     <Card title={(edit ? "Chỉnh sửa " : "Thêm mới ") + title?.toLowerCase()}>
       <Form onFinish={onFinish} form={form} layout="vertical">
         <Form.Item name="phong" hidden />
-        <Form.Item
-          label="Phòng"
-          name="idPhong"
-          rules={[...rules.required, ...rules.text, ...rules.length(200)]}
-        >
-          <SelectPhongKTX
-            onChange={(val, option) => {
-              const rawData = option?.rawData;
-              form.setFieldsValue({
-                phong: rawData,
-              });
-            }}
-          />
-        </Form.Item>
+        <Form.Item name="idPhong" hidden />
+        {/*<Form.Item*/}
+        {/*  label="Phòng"*/}
+        {/*  name="idPhong"*/}
+        {/*  rules={[...rules.required, ...rules.text, ...rules.length(200)]}*/}
+        {/*>*/}
+        {/*  <SelectPhongKTX*/}
+        {/*    onChange={(val, option) => {*/}
+        {/*      const rawData = option?.rawData;*/}
+        {/*      form.setFieldsValue({*/}
+        {/*        phong: rawData,*/}
+        {/*      });*/}
+        {/*    }}*/}
+        {/*  />*/}
+        {/*</Form.Item>*/}
 
         <Form.Item name="sinhvien" hidden />
         <Form.Item
@@ -60,11 +63,13 @@ const FormChucVu = (props: any) => {
           name="idSinhVien"
           rules={[...rules.required]}
         >
-          <SelectSinhVien
+          <SelectPhongDangKy
             onChange={(val, option) => {
-              const rawData = option?.rawData;
+              const rawData:DangKyPhongKTX.IRecord = option?.rawData as DangKyPhongKTX.IRecord;
               form.setFieldsValue({
-                sinhvien: rawData,
+                sinhvien: rawData?.idSinhVien,
+                phong: rawData?.idPhong,
+                idPhong:rawData?.idPhong?._id
               });
             }}
           />

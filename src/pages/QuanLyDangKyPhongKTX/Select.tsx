@@ -5,24 +5,19 @@ import { useModel } from "umi";
 /**
  * Secect Chức vụ để cho vào FormItem
  */
-const SelectSinhVien = (props: {
+const SelectPhongDangKy = (props: {
   value?: string | null;
   onChange?: (val: string | null, option?: any) => void;
   multiple?: boolean;
-  disabled?:boolean
+  disabled?: boolean;
 }) => {
-  const { value, onChange, multiple,disabled } = props;
-  const { danhSach, getAllModel, visibleForm } = useModel("quanlyhososinhvien");
+  const { value, onChange, multiple, disabled } = props;
+  const { danhSach, getAllModel, visibleForm } = useModel(
+    "quanlydangkyphongktx"
+  );
 
   useEffect(() => {
-    if (!visibleForm)
-      getAllModel(
-       undefined,
-        undefined,
-        { systemRole: "SinhVien" },
-        undefined,
-        "all"
-      );
+    if (!visibleForm) getAllModel();
   }, [visibleForm]);
 
   return (
@@ -32,8 +27,8 @@ const SelectSinhVien = (props: {
       onChange={onChange}
       options={danhSach.map((item) => ({
         key: item._id,
-        value: item._id,
-        label: `${item.hoDem} (${item.ten})`,
+        value: item.idSinhVien?._id,
+        label: `${item?.idSinhVien?.hoDem} ${item?.idSinhVien?.ten} (${item?.idPhong?.soPhong})`,
         rawData: item,
       }))}
       showSearch
@@ -44,4 +39,4 @@ const SelectSinhVien = (props: {
   );
 };
 
-export default SelectSinhVien;
+export default SelectPhongDangKy;

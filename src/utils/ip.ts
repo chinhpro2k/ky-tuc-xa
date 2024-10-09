@@ -3,8 +3,8 @@ import { AppModules, EModuleKey } from '@/services/base/constant';
 const ipRoot = APP_CONFIG_IP_ROOT; // ip dev
 
 // Ip Chính => Mặc định dùng trong các useInitModel
-const ip3 = ipRoot ; // ip dev
-// const ip3 = 'http://localhost:3000' ; // ip dev
+// const ip3 = ipRoot ; // ip dev
+const ip3 = 'http://localhost:3000' ; // ip dev
 
 // Ip khác
 const ipNotif = ipRoot + 'notification'; // ip dev
